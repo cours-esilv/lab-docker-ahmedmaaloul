@@ -1,0 +1,1 @@
+docker run  -p 8080:80 -e WS_BACK_URL=https://ideal-telegram-pq9q4xjpwxr3r99j-5000.app.github.dev/ fimage
