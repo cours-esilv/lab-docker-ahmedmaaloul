@@ -1,4 +1,23 @@
 version: '3'
 services:
-  my-service:
-    image: my-image
+  back-end:
+    image: ahmedmaaloul/back-end-app:v1
+    ports:
+      - "5000:5000"
+    environment:
+      - CURRENT_ENVIRONMENT=v1
+    volumes:
+      - back-end-data:/data
+
+  front-end:
+    image: ahmedmaaloul/fimage:latest
+    ports:
+      - "8080:80"
+    environment:
+      - WS_BACK_URL=https://ideal-telegram-pq9q4xjpwxr3r99j-5000.app.github.dev/
+    volumes:
+      - front-end-data:/data
+
+volumes:
+  back-end-data:
+  front-end-data:
